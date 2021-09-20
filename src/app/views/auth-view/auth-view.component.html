@@ -1,0 +1,71 @@
+<div class="row col-12 mx-auto mt-5">
+  <div class="d-flex justify-content-center flex-column">
+
+    <h3 class="mx-auto">Thomas c'est toi ?</h3>
+
+    <div *ngIf="errMsg"
+         class="alert alert-danger my-2 col-2 mx-auto"
+    >{{errMsg}}</div>
+
+    <form #authForm="ngForm" (ngSubmit)="onSubmitAuthForm()" class="d-flex justify-content-center">
+      <div class="justify-content-center mx-auto">
+
+        <div class="mb-3 ">
+
+          <label for="name"></label>
+
+          <input
+            #nameInput="ngModel"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="nom d'utilisateur"
+            class="form-control"
+            required
+            [(ngModel)]="name"
+          >
+          <app-errors-form
+            [control]="nameInput"
+            controlLabel="'Nom d'utilisateur'"
+          ></app-errors-form>
+
+        </div>
+
+        <div class="mb-3">
+
+          <label for="password"></label>
+
+          <input
+            #passwordInput="ngModel"
+            type="text"
+            id="password"
+            name="password"
+            placeholder="Mot de passe"
+            class="form-control"
+            required
+            [(ngModel)]="password"
+          >
+          <app-errors-form
+            [control]="passwordInput"
+            controlLabel="'Mot de passe'"
+          ></app-errors-form>
+
+        </div>
+
+        <div class="row col-12 mx-auto">
+          <button
+            type="submit"
+            class="btn-lg"
+            [disabled]="authForm.invalid">
+            ME CONNECTER
+          </button>
+        </div>
+
+
+      </div>
+
+
+    </form>
+  </div>
+
+</div>

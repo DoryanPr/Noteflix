@@ -1,0 +1,38 @@
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from "rxjs";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  token: BehaviorSubject<string>;
+
+  constructor() {
+    this.token = new BehaviorSubject<string>('');
+  }
+
+  signin(name: string, password: string): Promise<void | string> {
+    return new Promise<void | string>((res, rej) => {
+      setTimeout(() => {
+
+        if(name === 'Administrateur' && password === 'azerty') {
+          this.token.next('azertyui');
+          res();
+        } else {
+          rej('Les identifiants sont incorrects.')
+        }
+      }, 300)
+    });
+  }
+
+  signout(): Promise<void> {
+    return new Promise<void>((res, rej) => {
+      this.token.next('');
+      res();
+    });
+  }
+
+
+}
+

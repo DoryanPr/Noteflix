@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+}
+
+h2 {
+  color: #d30000;
+  font-size: 54px;
+  font-family: "Arial";
+  font-weight: bold;
+}
+
+img {
+  width: 300px;
+}
