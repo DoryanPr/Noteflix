@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {FormsModule} from "@angular/forms";
 import { ErrorsFormComponent } from './components/errors-form/errors-form.component';
 import { NewSerieViewComponent } from './views/new-serie-view/new-serie-view.component';
+import { RowItemComponent } from './components/row-item/row-item.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NewSerieViewComponent } from './views/new-serie-view/new-serie-view.com
     HeaderComponent,
     ErrorsFormComponent,
     NewSerieViewComponent,
+    RowItemComponent,
   ],
     imports: [
         BrowserModule,
