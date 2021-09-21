@@ -24,6 +24,7 @@ export class AuthViewComponent implements OnInit {
       .signin(this.name, this.password)
       .then(() => {
         this.router.navigateByUrl('home');
+        console.log(this.name);
       }).catch((errMsg: string) => {
       this.errMsg = errMsg;
     });

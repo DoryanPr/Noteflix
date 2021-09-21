@@ -1,5 +1,3 @@
-import {Commentary} from "./commentary.model";
-
 export class Serie {
 
   private _id: number;
