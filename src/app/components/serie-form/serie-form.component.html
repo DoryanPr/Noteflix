@@ -1,0 +1,116 @@
+<div class="row col-8 card mx-auto mt-3">
+
+  <h3 class="text-center mt-3">{{name}}</h3>
+
+  <form
+    class="my-3"
+    [formGroup]="serieForm"
+    (ngSubmit)="onSubmitSerieForm()"
+  >
+
+    <div
+      class="mb-3">
+      <label for="name">Nom</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        placeholder="Nom"
+        formControlName="name"
+        [(ngModel)]="serie.name"
+      >
+      <app-errors-form
+        [control]="this.serieForm.controls.name"
+        controlLabel="'Nom'"
+      ></app-errors-form>
+    </div>
+
+    <div
+      class="mb-3">
+      <label for="picture">URL de la photo</label>
+      <input
+        type="text"
+        id="picture"
+        name="picture"
+        class="form-control"
+        placeholder="URL"
+        formControlName="picture"
+        [(ngModel)]="serie.picture"
+      >
+      <app-errors-form
+        [control]="this.serieForm.controls.picture"
+        controlLabel="'Photo'"
+      ></app-errors-form>
+    </div>
+
+    <div
+      class="mb-3">
+      <label for="releaseDate">Date de sortie</label>
+      <input
+        type="text"
+        id="releaseDate"
+        name="releaseDate"
+        class="form-control"
+        placeholder="Date"
+        formControlName="releaseDate"
+        [(ngModel)]="serie.releaseDate"
+      >
+      <app-errors-form
+        [control]="this.serieForm.controls.releaseDate"
+        controlLabel="'Date'"
+      ></app-errors-form>
+    </div>
+
+    <div
+      class="mb-3">
+      <label for="nbSeason">Nombre de saison</label>
+      <input
+        type="text"
+        id="nbSeason"
+        name="nbSeason"
+        class="form-control"
+        placeholder="Nombre de saison"
+        formControlName="nbSeason"
+        [(ngModel)]="serie.nbSeason"
+      >
+      <app-errors-form
+        [control]="this.serieForm.controls.nbSeason"
+        controlLabel="'Nombre de saison'"
+      ></app-errors-form>
+    </div>
+
+    <div
+      class="mb-3">
+      <label for="description">Description</label>
+      <textarea
+        type="text"
+        id="description"
+        name="description"
+        class="form-control"
+        placeholder="description"
+        formControlName="description"
+        [(ngModel)]="serie.description"
+      ></textarea>
+      <app-errors-form
+        [control]="this.serieForm.controls.description"
+        controlLabel="'Description'"
+      ></app-errors-form>
+    </div>
+
+
+
+    <button
+      type="submit"
+      class="d-grid col-4 mx-auto btn btn-danger"
+      [disabled]="serieForm.invalid"
+    >
+      {{submitLabel}}
+    </button>
+
+  </form>
+
+  <a routerLink="/home" class="text-center text-success mb-2">
+    RETOUR
+  </a>
+</div>

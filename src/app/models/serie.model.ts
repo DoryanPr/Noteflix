@@ -1,19 +1,21 @@
+import {Commentary} from "./commentary.model";
+
 export class Serie {
 
   private _id: number;
   private _name: string;
-  private _releaseDate: string;
+  private _releaseDate: Date
   private _nbSeason: number;
   private _description: string;
   private _critical: string;
-  private _commentaries: string;
+  private _commentaries: Array<Commentary>;
   private _picture: string;
 
 
   static serieLength = 1;
 
 
-  constructor(name: string, releaseDate: string, nbSeason: number, description: string, critical: string, commentaries: string, picture: string) {
+  constructor(name: string, releaseDate: Date, nbSeason: number, description: string, critical: string, commentaries: Array<Commentary>, picture: string) {
 
     this._id = Serie.serieLength;
     this._name = name;
@@ -43,11 +45,11 @@ export class Serie {
     this._name = value;
   }
 
-  get releaseDate(): string {
+  get releaseDate(): Date {
     return this._releaseDate;
   }
 
-  set releaseDate(value: string) {
+  set releaseDate(value: Date) {
     this._releaseDate = value;
   }
 
@@ -75,11 +77,11 @@ export class Serie {
     this._critical = value;
   }
 
-  get commentaries(): string {
+  get commentaries(): Array<Commentary> {
     return this._commentaries;
   }
 
-  set commentaries(value: string) {
+  set commentaries(value: Array<Commentary>) {
     this._commentaries = value;
   }
 

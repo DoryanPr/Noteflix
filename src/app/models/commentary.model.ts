@@ -1,12 +1,12 @@
 export class Commentary {
   private _id: number;
-  private _releaseCommentary: string;
+  private _releaseCommentary: Date;
   private _author: string;
   private _content: string;
 
   static commentaryLength = 1;
 
-  constructor(releaseCommentary: string, author: string, content: string) {
+  constructor(releaseCommentary: Date, author: string, content: string) {
     this._id = Commentary.commentaryLength;
     this._releaseCommentary = releaseCommentary;
     this._author = author;
@@ -24,11 +24,11 @@ export class Commentary {
     this._id = value;
   }
 
-  get releaseCommentary(): string {
+  get releaseCommentary(): Date {
     return this._releaseCommentary;
   }
 
-  set releaseCommentary(value: string) {
+  set releaseCommentary(value: Date) {
     this._releaseCommentary = value;
   }
 

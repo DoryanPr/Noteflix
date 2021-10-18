@@ -1,0 +1,7 @@
+<div>
+  <h3 class="p-4 ms-4">Nos séries du moment</h3>
+
+  <app-row-item *ngFor="let row of rowNumbers"
+                [items]="selectItems(row)"
+  ></app-row-item>
+</div>

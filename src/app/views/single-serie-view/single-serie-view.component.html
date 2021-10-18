@@ -1,0 +1,54 @@
+<div class="ms-5 mt-5">
+  <button routerLink="/" class="btn btn-dark my-2 ">
+    RETOUR
+  </button>
+</div>
+
+<div class="row col-6 card shadow mx-auto">
+  <div class="card-body text-center">
+    <h3 class="card-title">{{serie?.name}} - {{serie?.id}}</h3>
+    <div class="col-8 mx-auto">
+      <img src="{{serie?.picture}}" alt="image série">
+    </div>
+    <div class="d-flex justify-content-around">
+      <div class="fw-bold">
+        {{serie?.releaseDate | date:'EEEE d MMMM y' : '':'fr'}}
+      </div>
+      <div class="fw-bold">
+        <span class="red">{{serie?.nbSeason}}</span> saisons
+      </div>
+    </div>
+    <div class="mx-auto my-5">
+      <p>{{serie?.description}}</p>
+    </div>
+    <div class="mx-auto my-5">
+      Critique de la série :
+      {{serie?.critical}}
+    </div>
+
+  </div>
+
+
+  <div class="ms-2">
+    Commentaire :
+    <hr>
+    <div class="d-flex flex-column-reverse">
+      <div
+        *ngFor="let comment of serie.commentaries"
+      >
+        {{comment.author}} - {{comment.releaseCommentary | date:'EEEE d MMMM y' : '':'fr'}}
+        {{comment.content}}
+        <hr class="mt-1 mb-3">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-6 mx-auto">
+  <app-commentary-form
+    (formSubmitted)="askToAddCommentary($event, serie)">
+    <!--  [serie] = "serie"-->
+  </app-commentary-form>
+</div>
+
+

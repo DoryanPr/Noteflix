@@ -1,18 +1,21 @@
 <div class="d-flex justify-content-evenly">
-    <img src="assets/noteflix-icon.webp" alt="icon_noteflix" class="col-4">
-    <h2 class="d-flex justify-content-start my-auto col-8">NOTEFLIX</h2>
+  <img src="assets/noteflix-icon.webp" alt="icon_noteflix" class="col-4">
+  <h2 class="d-flex justify-content-start my-auto col-8">NOTEFLIX</h2>
 
-  <button
-    *ngIf="isConnected && !isAddPage"
-    class="btn btn-outline-success me-2"
-    routerLink="/books/new">
-    AJOUTER
-  </button>
+  <div class="position-absolute top-0 end-0 mt-2">
+    <button
+      *ngIf="isConnected && !isAddPage"
+      class="btn btn-outline-danger me-2"
+      routerLink="/series/new">
+      AJOUTER
+    </button>
 
-  <button
-    *ngIf="isConnected"
-    class="btn btn-outline-dark"
-    (click)="onClickSignout()">
-    ME DÉCONNECTER
-  </button>
+    <button
+      *ngIf="isConnected"
+      class="btn btn-outline-dark p-2"
+      (click)="onClickSignout()">
+      ME DÉCONNECTER
+    </button>
+  g
+  </div>
 </div>

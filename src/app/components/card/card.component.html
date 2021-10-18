@@ -1,0 +1,16 @@
+<div class="card mb-5" style="width: 10rem;">
+  <img src="{{picture}}" class="card-img-top" alt="image de la série">
+  <div class="card-body">
+    <h5 class="card-title">{{id}} - {{name}}</h5>
+  </div>
+<button
+[routerLink]="['/series', id]"
+class="mb-2">
+  VOIR
+</button>
+
+<button
+[routerLink]="['/series', id, 'edit']">
+  ÉDITER
+</button>
+</div>

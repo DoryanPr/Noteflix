@@ -1,0 +1,50 @@
+<form
+class="my-3"
+[formGroup]="commentaryForm"
+(ngSubmit)="onSubmitCommentaryForm()"
+>
+
+<div class="mb-3">
+  <label for="author">Nom</label>
+  <input
+    type="text"
+    id="author"
+    name="author"
+    class="form-control"
+    placeholder="Nom d'utilisateur"
+    formControlName="author"
+    [(ngModel)]="commentary.author"
+  >
+  <app-errors-form
+    [control]="this.commentaryForm.controls.author"
+    controlLabel="'Nom'"
+  ></app-errors-form>
+</div>
+
+<div class="mb-3">
+  <label for="commentary">Commentaire</label>
+  <textarea
+    type="text"
+    id="commentary"
+    name="commentary"
+    class="form-control"
+    placeholder="C9ommentaire"
+    formControlName="commentary"
+    [(ngModel)]="commentary.content"
+  ></textarea>
+  <app-errors-form
+    [control]="this.commentaryForm.controls.content"
+    controlLabel="'Commentaire'"
+  ></app-errors-form>
+</div>
+
+<button
+  type="submit"
+  class="d-grid col-4 mx-auto btn btn-dark"
+  [disabled]="commentaryForm.invalid"
+>
+ POSTER
+</button>
+
+</form>
+
